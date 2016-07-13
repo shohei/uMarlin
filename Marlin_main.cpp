@@ -34,16 +34,16 @@
 
 #include "Marlin.h"
 
-#if ENABLED(AUTO_BED_LEVELING_FEATURE)
-  #include "vector_3.h"
-  #if ENABLED(AUTO_BED_LEVELING_GRID)
-    #include "qr_solve.h"
-  #endif
-#endif // AUTO_BED_LEVELING_FEATURE
+// #if ENABLED(AUTO_BED_LEVELING_FEATURE)
+//   #include "vector_3.h"
+//   #if ENABLED(AUTO_BED_LEVELING_GRID)
+//     #include "qr_solve.h"
+//   #endif
+// #endif // AUTO_BED_LEVELING_FEATURE
 
-#if ENABLED(MESH_BED_LEVELING)
-  #include "mesh_bed_leveling.h"
-#endif
+// #if ENABLED(MESH_BED_LEVELING)
+//   #include "mesh_bed_leveling.h"
+// #endif
 
 #include "planner.h"
 #include "stepper.h"
