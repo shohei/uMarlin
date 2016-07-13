@@ -109,17 +109,17 @@ FORCE_INLINE uint8_t movesplanned() { return BLOCK_MOD(block_buffer_head - block
 
 #if ENABLED(AUTO_BED_LEVELING_FEATURE) || ENABLED(MESH_BED_LEVELING)
 
-  #if ENABLED(AUTO_BED_LEVELING_FEATURE)
-    #include "vector_3.h"
+  // #if ENABLED(AUTO_BED_LEVELING_FEATURE)
+  //   #include "vector_3.h"
 
-    // Transform required to compensate for bed level
-    extern matrix_3x3 plan_bed_level_matrix;
+  //   // Transform required to compensate for bed level
+  //   extern matrix_3x3 plan_bed_level_matrix;
 
-    /**
-     * Get the position applying the bed level matrix
-     */
-    vector_3 plan_get_position();
-  #endif  // AUTO_BED_LEVELING_FEATURE
+  //   /**
+  //    * Get the position applying the bed level matrix
+  //    */
+  //   vector_3 plan_get_position();
+  // #endif  // AUTO_BED_LEVELING_FEATURE
 
   /**
    * Add a new linear movement to the buffer. x, y, z are the signed, absolute target position in
