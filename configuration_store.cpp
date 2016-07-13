@@ -124,7 +124,7 @@
 #include "language.h"
 #include "planner.h"
 #include "temperature.h"
-#include "ultralcd.h"
+// #include "ultralcd.h"
 #include "configuration_store.h"
 
 #if ENABLED(MESH_BED_LEVELING)
@@ -281,10 +281,10 @@ void Config_StoreSettings()  {
   EEPROM_WRITE_VAR(i, bedKi);
   EEPROM_WRITE_VAR(i, bedKd);
 
-  #if DISABLED(HAS_LCD_CONTRAST)
-    const int lcd_contrast = 32;
-  #endif
-  EEPROM_WRITE_VAR(i, lcd_contrast);
+  // #if DISABLED(HAS_LCD_CONTRAST)
+  //   const int lcd_contrast = 32;
+  // #endif
+  // EEPROM_WRITE_VAR(i, lcd_contrast);
 
   #if ENABLED(SCARA)
     EEPROM_WRITE_VAR(i, axis_scaling); // 3 floats
@@ -463,10 +463,10 @@ void Config_RetrieveSettings() {
       for (uint8_t q=2; q--;) EEPROM_READ_VAR(i, dummy); // bedKi, bedKd
     }
 
-    #if DISABLED(HAS_LCD_CONTRAST)
-      int lcd_contrast;
-    #endif
-    EEPROM_READ_VAR(i, lcd_contrast);
+    // #if DISABLED(HAS_LCD_CONTRAST)
+    //   int lcd_contrast;
+    // #endif
+    // EEPROM_READ_VAR(i, lcd_contrast);
 
     #if ENABLED(SCARA)
       EEPROM_READ_VAR(i, axis_scaling);  // 3 floats
@@ -571,18 +571,18 @@ void Config_ResetDefault() {
     z_endstop_adj = 0;
   #endif
 
-  #if ENABLED(ULTIPANEL)
-    plaPreheatHotendTemp = PLA_PREHEAT_HOTEND_TEMP;
-    plaPreheatHPBTemp = PLA_PREHEAT_HPB_TEMP;
-    plaPreheatFanSpeed = PLA_PREHEAT_FAN_SPEED;
-    absPreheatHotendTemp = ABS_PREHEAT_HOTEND_TEMP;
-    absPreheatHPBTemp = ABS_PREHEAT_HPB_TEMP;
-    absPreheatFanSpeed = ABS_PREHEAT_FAN_SPEED;
-  #endif
+  // #if ENABLED(ULTIPANEL)
+  //   plaPreheatHotendTemp = PLA_PREHEAT_HOTEND_TEMP;
+  //   plaPreheatHPBTemp = PLA_PREHEAT_HPB_TEMP;
+  //   plaPreheatFanSpeed = PLA_PREHEAT_FAN_SPEED;
+  //   absPreheatHotendTemp = ABS_PREHEAT_HOTEND_TEMP;
+  //   absPreheatHPBTemp = ABS_PREHEAT_HPB_TEMP;
+  //   absPreheatFanSpeed = ABS_PREHEAT_FAN_SPEED;
+  // #endif
 
-  #if ENABLED(HAS_LCD_CONTRAST)
-    lcd_contrast = DEFAULT_LCD_CONTRAST;
-  #endif
+  // #if ENABLED(HAS_LCD_CONTRAST)
+  //   lcd_contrast = DEFAULT_LCD_CONTRAST;
+  // #endif
 
   #if ENABLED(PIDTEMP)
     #if ENABLED(PID_PARAMS_PER_EXTRUDER)
@@ -842,15 +842,15 @@ void Config_PrintSettings(bool forReplay) {
 
   #endif // PIDTEMP || PIDTEMPBED
 
-  #if ENABLED(HAS_LCD_CONTRAST)
-    CONFIG_ECHO_START;
-    if (!forReplay) {
-      SERIAL_ECHOLNPGM("LCD Contrast:");
-      CONFIG_ECHO_START;
-    }
-    SERIAL_ECHOPAIR("  M250 C", lcd_contrast);
-    SERIAL_EOL;
-  #endif
+  // #if ENABLED(HAS_LCD_CONTRAST)
+  //   CONFIG_ECHO_START;
+  //   if (!forReplay) {
+  //     SERIAL_ECHOLNPGM("LCD Contrast:");
+  //     CONFIG_ECHO_START;
+  //   }
+  //   SERIAL_ECHOPAIR("  M250 C", lcd_contrast);
+  //   SERIAL_EOL;
+  // #endif
 
   #if ENABLED(FWRETRACT)
 

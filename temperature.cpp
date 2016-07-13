@@ -41,10 +41,10 @@
 */
 
 #include "Marlin.h"
-#include "ultralcd.h"
+// #include "ultralcd.h"
 #include "temperature.h"
 #include "language.h"
-#include "Sd2PinMap.h"
+// #include "Sd2PinMap.h"
 
 #if ENABLED(USE_WATCHDOG)
   #include "watchdog.h"
@@ -450,7 +450,7 @@ static void updateTemperaturesFromRawValues();
         }
         return;
       }
-      lcd_update();
+      // lcd_update();
     }
   }
 
@@ -1027,14 +1027,14 @@ void tp_init() {
 
   #if ENABLED(HEATER_0_USES_MAX6675)
 
-    #if DISABLED(SDSUPPORT)
-      OUT_WRITE(SCK_PIN, LOW);
-      OUT_WRITE(MOSI_PIN, HIGH);
-      OUT_WRITE(MISO_PIN, HIGH);
-    #else
-      pinMode(SS_PIN, OUTPUT);
-      digitalWrite(SS_PIN, HIGH);
-    #endif
+    // #if DISABLED(SDSUPPORT)
+    //   OUT_WRITE(SCK_PIN, LOW);
+    //   OUT_WRITE(MOSI_PIN, HIGH);
+    //   OUT_WRITE(MISO_PIN, HIGH);
+    // #else
+    //   pinMode(SS_PIN, OUTPUT);
+    //   digitalWrite(SS_PIN, HIGH);
+    // #endif
 
     OUT_WRITE(MAX6675_SS, HIGH);
 
@@ -1631,7 +1631,7 @@ ISR(TIMER0_COMPB_vect) {
       #if HAS_TEMP_0
         START_ADC(TEMP_0_PIN);
       #endif
-      lcd_buttons_update();
+      // lcd_buttons_update();
       temp_state = MeasureTemp_0;
       break;
     case MeasureTemp_0:
@@ -1645,7 +1645,7 @@ ISR(TIMER0_COMPB_vect) {
       #if HAS_TEMP_BED
         START_ADC(TEMP_BED_PIN);
       #endif
-      lcd_buttons_update();
+      // lcd_buttons_update();
       temp_state = MeasureTemp_BED;
       break;
     case MeasureTemp_BED:
@@ -1659,7 +1659,7 @@ ISR(TIMER0_COMPB_vect) {
       #if HAS_TEMP_1
         START_ADC(TEMP_1_PIN);
       #endif
-      lcd_buttons_update();
+      // lcd_buttons_update();
       temp_state = MeasureTemp_1;
       break;
     case MeasureTemp_1:
@@ -1673,7 +1673,7 @@ ISR(TIMER0_COMPB_vect) {
       #if HAS_TEMP_2
         START_ADC(TEMP_2_PIN);
       #endif
-      lcd_buttons_update();
+      // lcd_buttons_update();
       temp_state = MeasureTemp_2;
       break;
     case MeasureTemp_2:
@@ -1687,7 +1687,7 @@ ISR(TIMER0_COMPB_vect) {
       #if HAS_TEMP_3
         START_ADC(TEMP_3_PIN);
       #endif
-      lcd_buttons_update();
+      // lcd_buttons_update();
       temp_state = MeasureTemp_3;
       break;
     case MeasureTemp_3:
@@ -1701,7 +1701,7 @@ ISR(TIMER0_COMPB_vect) {
       #if ENABLED(FILAMENT_WIDTH_SENSOR)
         START_ADC(FILWIDTH_PIN);
       #endif
-      lcd_buttons_update();
+      // lcd_buttons_update();
       temp_state = Measure_FILWIDTH;
       break;
     case Measure_FILWIDTH:
