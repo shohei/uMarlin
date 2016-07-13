@@ -48,7 +48,6 @@
 #include "planner.h"
 #include "stepper.h"
 #include "temperature.h"
-#include "configuration_store.h"
 #include "language.h"
 #include "pins_arduino.h"
 #include "math.h"
@@ -780,7 +779,7 @@ void setup() {
   for (int8_t i = 0; i < BUFSIZE; i++) send_ok[i] = true;
 
   // loads data from EEPROM if available else uses defaults (and resets step acceleration rate)
-  Config_RetrieveSettings();
+  // Config_RetrieveSettings();
 
   // lcd_init();
 
@@ -5900,28 +5899,28 @@ inline void gcode_M428() {
  * M500: Store settings in EEPROM
  */
 inline void gcode_M500() {
-  Config_StoreSettings();
+  // Config_StoreSettings();
 }
 
 /**
  * M501: Read settings from EEPROM
  */
 inline void gcode_M501() {
-  Config_RetrieveSettings();
+  // Config_RetrieveSettings();
 }
 
 /**
  * M502: Revert to default settings
  */
 inline void gcode_M502() {
-  Config_ResetDefault();
+  // Config_ResetDefault();
 }
 
 /**
  * M503: print settings currently in memory
  */
 inline void gcode_M503() {
-  Config_PrintSettings(code_seen('S') && code_value() == 0);
+  // Config_PrintSettings(code_seen('S') && code_value() == 0);
 }
 
 #if ENABLED(ABORT_ON_ENDSTOP_HIT_FEATURE_ENABLED)
