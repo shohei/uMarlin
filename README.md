@@ -6,3 +6,10 @@ Zynq-7000
 
 # Target board
 ZYBO
+
+
+# TODO
+- marlin serial to xil_printf
+- interrupt handler to xilinx interrupt
+
+
