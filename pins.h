@@ -275,7 +275,7 @@
     analogInputToDigitalPin(TEMP_BED_PIN) \
   }
 
-#define HAS_DIGIPOTSS (PIN_EXISTS(DIGIPOTSS))
+// #define HAS_DIGIPOTSS (PIN_EXISTS(DIGIPOTSS))
 
 #endif //__PINS_H
 
