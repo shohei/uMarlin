@@ -11,5 +11,5 @@ ZYBO
 # TODO
 - marlin serial to xil_printf
 - interrupt handler to xilinx interrupt
-
+- pin assignment for zynq hardware
 
